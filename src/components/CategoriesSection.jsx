@@ -12,13 +12,16 @@ const CategoriesSection = () => {
   ];
 
   return (
-    <section className="bg-white py-20 relative">
+    <section className="bg-gray-300 border-t border-gray-200 py-10">
       <div className="container mx-auto px-4">
+
         {/* Header Box Title */}
         <div className="flex justify-center -mt-28 mb-16 relative z-10">
-           <div className="bg-white px-12 py-4 shadow-xl border-t-4 border-black">
-             <h2 className="text-3xl font-black uppercase tracking-widest text-black">Categories</h2>
-           </div>
+          <div className="bg-gray-300 px-12 py-4 shadow-xl border-t-4 border-black">
+            <h2 className="text-3xl font-black uppercase tracking-widest text-black">
+              Categories
+            </h2>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -26,6 +29,7 @@ const CategoriesSection = () => {
             <CategoryCard key={idx} {...cat} />
           ))}
         </div>
+
       </div>
     </section>
   );

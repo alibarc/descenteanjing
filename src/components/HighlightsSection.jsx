@@ -35,14 +35,14 @@ const HighlightsSection = () => {
           </div>
         </div>
         
-        {/* Organized By */}
+        {/* Organized By
         <div className="mt-20">
            <p className="text-gray-500 text-xs uppercase tracking-widest mb-4">Organized By :</p>
            <div className="text-red-600 font-black text-3xl font-serif tracking-widest">
              GIMBAL ALAS
              <div className="text-white text-xs font-sans tracking-[0.5em] mt-1">INDONESIA 3676 MDPL</div>
            </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
