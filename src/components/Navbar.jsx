@@ -3,7 +3,7 @@
 import { ASSETS } from "../assets/assets";
 import { useState, useEffect } from "react";
 import { ChevronDown, X, Menu } from "lucide-react";
-import { Link } from "react-router-dom"; // <-- WAJIB UNTUK ROUTER
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,26 +33,31 @@ const Navbar = () => {
           <Link to="/" className="hover:text-[#DFFF00] transition-colors">
             Home
           </Link>
-          
+
           <div className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors">
             Race Info <ChevronDown size={14} />
           </div>
 
           <div className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors">
-            Announcement <ChevronDown size={14} />
+            Gallery <ChevronDown size={14} />
           </div>
 
-          <div className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors">
-            Categories <ChevronDown size={14} />
-          </div>
+          {/* ✔ CATEGORIES langsung ke detail kategori */}
+          <Link 
+            to="/detailkategori"
+            className="hover:text-[#DFFF00] transition-colors"
+          >
+            Categories
+          </Link>
 
           {/* About Us */}
           <Link 
             to="/aboutus"
-            className="flex items-center gap-1 hover:text-[#DFFF00] transition-colors"
+            className="hover:text-[#DFFF00] transition-colors"
           >
-            About Us <ChevronDown size={14} />
+            About Us
           </Link>
+
         </div>
 
         {/* Mobile Toggle */}
@@ -75,8 +80,16 @@ const Navbar = () => {
             </Link>
 
             <div className="block py-2">Race Info</div>
-            <div className="block py-2">Announcement</div>
-            <div className="block py-2">Categories</div>
+            <div className="block py-2">Gallery</div>
+
+            {/* Mobile Categories */}
+            <Link
+              to="/detailkategori"
+              onClick={() => setIsOpen(false)}
+              className="block py-2"
+            >
+              Categories
+            </Link>
 
             <Link
               to="/aboutus"
@@ -85,6 +98,7 @@ const Navbar = () => {
             >
               About Us
             </Link>
+
           </div>
         </div>
       )}

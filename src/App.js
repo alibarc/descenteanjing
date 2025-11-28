@@ -1,3 +1,4 @@
+//app.jsx
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Phone, MapPin, ChevronDown, Play } from 'lucide-react';
@@ -11,6 +12,7 @@ import LakesSection from "./components/LakesSection";
 import HighlightsSection from "./components/HighlightsSection";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs"; 
+import DetailKategori from './components/DetailKategori';
 
 // ---------------------------
 // 🔥 SCROLL TO TOP COMPONENT
@@ -65,6 +67,8 @@ const App = () => {
             {/* ABOUT US */}
             <Route path="/aboutus" element={<AboutUs />} />
 
+            {/* CATEGORIES */}
+            <Route path="/detailkategori" element={<DetailKategori />} />
           </Routes>
         </main>
 
