@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Menu, X, Instagram, Phone, MapPin, ChevronDown, Play } from 'lucide-react';
 
 // COMPONENTS
@@ -12,10 +12,29 @@ import HighlightsSection from "./components/HighlightsSection";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs"; 
 
-// --- MAIN APP ---
+// ---------------------------
+// 🔥 SCROLL TO TOP COMPONENT
+// ---------------------------
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);   // scroll ke atas setiap route berubah
+  }, [pathname]);
+
+  return null;
+}
+
+// ---------------------------
+// MAIN APP COMPONENT
+// ---------------------------
 const App = () => {
   return (
     <Router>
+
+      {/* 👇 ScrollToTop agar pindah halaman selalu mulai dari atas */}
+      <ScrollToTop />
+
       <div className="font-sans antialiased text-gray-900 bg-black min-h-screen selection:bg-[#DFFF00] selection:text-black">
         
         <style>{`

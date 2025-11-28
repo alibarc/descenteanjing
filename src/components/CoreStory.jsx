@@ -23,6 +23,15 @@ const CoreStory = () => {
             </p>
           </div>
 
+          {/* Gambar */}
+        <div className="rounded-xl overflow-hidden shadow-2xl">
+          <img 
+            src="https://placehold.co/800x500/1e293b/FFFFFF?text=Pelari+Jalur+Gunung"
+            alt="Pelari jalur gunung Semeru"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
           {/* Misi & Visi ke dalam grid 2 kolom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             
@@ -47,14 +56,7 @@ const CoreStory = () => {
           </div>
         </div>
 
-        {/* Gambar */}
-        <div className="rounded-xl overflow-hidden shadow-2xl">
-          <img 
-            src="https://placehold.co/800x500/1e293b/FFFFFF?text=Pelari+Jalur+Gunung"
-            alt="Pelari jalur gunung Semeru"
-            className="w-full h-auto object-cover"
-          />
-        </div>
+        
 
       </div>
     </section>
