@@ -68,7 +68,7 @@ const App = () => {
             <Route path="/aboutus" element={<AboutUs />} />
 
             {/* CATEGORIES */}
-            <Route path="/detailkategori" element={<DetailKategori />} />
+            <Route path="/category/:km" element={<DetailKategori />} />
           </Routes>
         </main>
 

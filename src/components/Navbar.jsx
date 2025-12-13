@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState(false);
+  const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false); 
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -42,13 +44,25 @@ const Navbar = () => {
             Gallery <ChevronDown size={14} />
           </div>
 
-          {/* ✔ CATEGORIES langsung ke detail kategori */}
-          <Link 
-            to="/detailkategori"
-            className="hover:text-[#DFFF00] transition-colors"
+          {/* ================= DESKTOP CATEGORIES DROPDOWN ================= */}
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenCategory(true)}
+            onMouseLeave={() => setOpenCategory(false)}
           >
-            Categories
-          </Link>
+            <div className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors">
+              Categories <ChevronDown size={14} />
+            </div>
+
+            {openCategory && (
+              <div className="absolute right-0 mt-2 bg-black border border-gray-700 shadow-lg rounded-md w-40 py-2 z-50 animate-fadeSlide">
+                <Link to="/category/8"  className="block px-4 py-2 hover:bg-[#DFFF00] hover:text-black"> 8 KM  </Link>
+                <Link to="/category/16" className="block px-4 py-2 hover:bg-[#DFFF00] hover:text-black"> 16 KM </Link>
+                <Link to="/category/32" className="block px-4 py-2 hover:bg-[#DFFF00] hover:text-black"> 32 KM </Link>
+                <Link to="/category/50" className="block px-4 py-2 hover:bg-[#DFFF00] hover:text-black"> 50 KM </Link>
+              </div>
+            )}
+          </div>
 
           {/* About Us */}
           <Link 

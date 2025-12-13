@@ -1,5 +1,7 @@
 // DetailKategori.jsx
 import React from "react";
+import { useParams } from "react-router-dom";
+
 import {
   Pencil,
   Flag,
@@ -11,47 +13,7 @@ import {
   Users,
 } from "lucide-react";
 
-// 🔥 IMPORT GAMBAR LOKAL
-import bannerImage from "../assets/hero.jpg";
-import runnerImg from "../assets/oranglari2.jpg";
-import routeMap from "../assets/route-map.jpg"; // <--- PETA RUTE
-
-const raceData = {
-  title: "ATR 50 KM",
-  tagline: "Solitude",
-
-  summaryCards: [
-    { Icon: Pencil, label: "REG FEE", value: "Local: 1.900.000 | Foreign: 2.000.000" },
-    { Icon: Flag, label: "START", value: "Friday, 09 May 2025 | 04:00 PM" },
-    { Icon: Mountain, label: "ELEVATION GAIN", value: "7.244 m" },
-    { Icon: Clock, label: "CUT OFF TIME", value: "34 Hours" },
-    { Icon: Cross, label: "WS & DROP BAG", value: "11 WS & Drop Bag at WS6 / KM60" },
-    { Icon: Trophy, label: "AWARD & PRIZE", value: "Open, Master 50+" },
-  ],
-
-  details: [
-    { label: "Distance", value: "106.20 KM", Icon: Zap },
-    { label: "Elevation Gain", value: "7.244 m", Icon: Mountain },
-    { label: "Cut-Off Time", value: "34 Hours", Icon: Clock },
-    { label: "Age Range", value: "18 - 50+", Icon: Users },
-    { label: "Award & Prize", value: "Open, Master 50+", Icon: Trophy },
-  ],
-
-  copData: [
-    "COP 1 at WS4 / KM40 : 9 Hours",
-    "COP 2 at WS6 / KM60 : 16 Hours",
-    "COP 3 at WS8 / KM80 : 25 Hours",
-  ],
-
-  qualificationData: [
-    "100K ultra road race",
-    "BTRU 55K ultra trail",
-    "60K - 80K ultra trail race",
-  ],
-
-  bannerImageUrl: bannerImage,
-  runnerIllustrationUrl: runnerImg,
-};
+import { categoryDetailData } from "../data/categoryDetailData";
 
 const SummaryCard = ({ Icon, label, value }) => (
   <div className="flex flex-col items-center justify-center p-6 bg-[#000] rounded-xl border border-gray-800 hover:border-[#DFFF00] transition duration-300 shadow-md">
@@ -64,6 +26,17 @@ const SummaryCard = ({ Icon, label, value }) => (
 );
 
 const DetailKategori = () => {
+  const { km } = useParams();                     // 👉 Ambil param URL
+  const raceData = categoryDetailData[km];        // 👉 Ambil data sesuai kategori
+
+  if (!raceData) {
+    return (
+      <div className="text-center text-white py-20">
+        <h2 className="text-3xl font-bold">Category Not Found</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#000000] text-white min-h-screen font-sans">
 
@@ -111,7 +84,7 @@ const DetailKategori = () => {
               />
 
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                <h3 className="text-xl font-bold">100K ROUTE DETAILS</h3>
+                <h3 className="text-xl font-bold">{raceData.title} ROUTE DETAILS</h3>
                 <p className="text-[#DFFF00] text-sm">ALASTRAILRUN.COM</p>
               </div>
             </div>
@@ -191,8 +164,8 @@ const DetailKategori = () => {
           {/* Route Map */}
           <div className="bg-[#000] rounded-xl overflow-hidden shadow-xl border border-gray-800">
             <img
-              src={routeMap}
-              alt="Route Map 100KM"
+              src={raceData.routeMapUrl}
+              alt={`Route Map ${raceData.title}`}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -202,7 +175,7 @@ const DetailKategori = () => {
 
       {/* ================= FOOTER ================= */}
       <footer className="text-center text-gray-400 text-sm border-t border-gray-800 py-6">
-        ALAS TRAIL RUN — CATEGORY 100KM
+        ALAS TRAIL RUN — CATEGORY {km} KM
       </footer>
     </div>
   );

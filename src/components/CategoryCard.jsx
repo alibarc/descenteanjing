@@ -1,6 +1,7 @@
 // --- COMPONENT: CATEGORIES CARD ---
 // File: /components/CategoryCard.jsx
 import { ASSETS } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const CategoryCard = ({ km, img, elevation, cutOff }) => (
   <div className="bg-white text-black group hover:-translate-y-2 transition-transform duration-300 shadow-xl overflow-hidden flex flex-col h-full">
@@ -29,7 +30,7 @@ const CategoryCard = ({ km, img, elevation, cutOff }) => (
       </div>
       
       <button className="w-full bg-[#DFFF00] hover:bg-[#cbe600] text-black font-bold py-2 px-4 text-xs uppercase tracking-widest transition-colors mt-auto">
-        Details
+        <Link to={`/category/${km}`}>Details</Link>
       </button>
     </div>
   </div>
