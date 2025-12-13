@@ -29,9 +29,13 @@ const CategoryCard = ({ km, img, elevation, cutOff }) => (
         </div>
       </div>
       
-      <button className="w-full bg-[#DFFF00] hover:bg-[#cbe600] text-black font-bold py-2 px-4 text-xs uppercase tracking-widest transition-colors mt-auto">
-        <Link to={`/category/${km}`}>Details</Link>
-      </button>
+      <Link
+        to={`/category/${km}`}
+        className="w-full bg-[#DFFF00] hover:bg-[#cbe600] text-black font-bold py-2 px-4 text-xs uppercase tracking-widest transition-colors mt-auto text-center"
+      >
+        Details
+      </Link>
+
     </div>
   </div>
 );
