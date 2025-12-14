@@ -3,15 +3,15 @@
 import { ASSETS } from "../assets/assets";
 const LakesSection = () => {
   const lakes = [
-    { name: "RANU KUMBOLO", img: ASSETS.lake1 },
+    { name: "RANU KUMBOLO", img: ASSETS.lake3 },
     { name: "RANU REGULO", img: ASSETS.lake2 },
-    { name: "RANU PANI", img: ASSETS.lake3 },
+    { name: "RANU PANI", img: ASSETS.lake1 },
   ];
 
   return (
     <section className="bg-[#050505] py-24 border-t border-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-white text-lg font-bold uppercase tracking-[0.2em] mb-12 text-gray-400">
+        <h2 className="text-center text-white text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-[0.25em] mb-16 text-gray-300">
           3 Lake For Solitude
         </h2>
 

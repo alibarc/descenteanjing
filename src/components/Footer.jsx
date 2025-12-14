@@ -4,12 +4,12 @@ import { ASSETS } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-300 border-t border-gray-200 py-10">
+    <footer className="bg-gray-400 border-t border-gray-400 py-10">
   <div className="container mx-auto px-4">
 
     {/* CENTERED ORGANIZER (FULL WIDTH) */}
     <div className="text-center mb-10">
-      <p className="text-[10px] tracking-widest uppercase text-gray-600">
+      <p className="text-[10px] tracking-widest uppercase text-black">
         Organized by :
       </p>
 
@@ -30,7 +30,7 @@ const Footer = () => {
         <img 
           src={ASSETS.logo} 
           alt="Logo" 
-          className="w-12 h-12 opacity-100" 
+          className="w-12 h-15 opacity-100" 
         />
         <div className="flex flex-col">
           <h3 className="font-black text-xl uppercase tracking-tighter text-black leading-none">
@@ -44,7 +44,7 @@ const Footer = () => {
 
       {/* Right */}
       <div>
-        <p className="text-[10px] font-medium text-black uppercase tracking-widest text-center md:text-right">
+        <p className="text-[12px] font-medium text-black uppercase tracking-widest text-center md:text-right">
           © 2026 Alas Trail Run. <span className="hidden sm:inline">All Rights Reserved.</span>
         </p>
       </div>

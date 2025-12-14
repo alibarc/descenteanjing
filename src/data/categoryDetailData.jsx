@@ -1,7 +1,5 @@
 // categoryDetailData.js
-import bannerImage from "../assets/hero.jpg";
-import runnerImg from "../assets/oranglari2.jpg";
-import routeMap from "../assets/route-map.jpg";
+import { ASSETS } from "../assets/assets";
 
 import {
   Pencil,
@@ -18,7 +16,6 @@ export const categoryDetailData = {
   // ===================== 8 KM =====================
   "8": {
     title: "ATR 8 KM",
-    tagline: "Solitude",
 
     summaryCards: [
       { Icon: Pencil, label: "REG FEE", value: "Local: 1.900.000 | Foreign: 2.000.000" },
@@ -49,15 +46,15 @@ export const categoryDetailData = {
       "60K - 80K ultra trail race",
     ],
 
-    bannerImageUrl: bannerImage,
-    runnerIllustrationUrl: runnerImg,
-    routeMapUrl: routeMap,
+    // 👉 AMBIL DARI assets.js
+    bannerImageUrl: ASSETS.category8k,
+    runnerIllustrationUrl: ASSETS.start,
+    routeMapUrl: ASSETS.routemap,
   },
 
   // ===================== 16 KM =====================
   "16": {
     title: "ATR 16 KM",
-    tagline: "Solitude",
 
     summaryCards: [
       { Icon: Pencil, label: "REG FEE", value: "Local: 1.900.000 | Foreign: 2.000.000" },
@@ -88,15 +85,14 @@ export const categoryDetailData = {
       "60K - 80K ultra trail race",
     ],
 
-    bannerImageUrl: bannerImage,
-    runnerIllustrationUrl: runnerImg,
-    routeMapUrl: routeMap,
+    bannerImageUrl: ASSETS.category16k,
+    runnerIllustrationUrl: ASSETS.start,
+    routeMapUrl: ASSETS.routemap,
   },
 
   // ===================== 32 KM =====================
   "32": {
     title: "ATR 32 KM",
-    tagline: "Solitude",
 
     summaryCards: [
       { Icon: Pencil, label: "REG FEE", value: "Local: 1.900.000 | Foreign: 2.000.000" },
@@ -127,15 +123,14 @@ export const categoryDetailData = {
       "60K - 80K ultra trail race",
     ],
 
-    bannerImageUrl: bannerImage,
-    runnerIllustrationUrl: runnerImg,
-    routeMapUrl: routeMap,
+    bannerImageUrl: ASSETS.category32k,
+    runnerIllustrationUrl: ASSETS.start,
+    routeMapUrl: ASSETS.routemap,
   },
 
   // ===================== 50 KM =====================
   "50": {
     title: "ATR 50 KM",
-    tagline: "Solitude",
 
     summaryCards: [
       { Icon: Pencil, label: "REG FEE", value: "Local: 1.900.000 | Foreign: 2.000.000" },
@@ -166,8 +161,8 @@ export const categoryDetailData = {
       "60K - 80K ultra trail race",
     ],
 
-    bannerImageUrl: bannerImage,
-    runnerIllustrationUrl: runnerImg,
-    routeMapUrl: routeMap,
+    bannerImageUrl: ASSETS.category50k,
+    runnerIllustrationUrl: ASSETS.start,
+    routeMapUrl: ASSETS.routemap,
   }
 };

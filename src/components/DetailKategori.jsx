@@ -51,8 +51,8 @@ const DetailKategori = () => {
           <h1 className="text-5xl sm:text-7xl font-extrabold mb-4">
             {raceData.title}
           </h1>
-          <p className="text-xl sm:text-2xl italic text-gray-300">
-            {raceData.tagline}
+          <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-light italic tracking-wide text-gray-100">
+            Solitude
           </p>
         </div>
       </header>

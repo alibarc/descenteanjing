@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={ASSETS.logo} alt="Logo" className="h-10 w-10 filter invert brightness-0 invert-100" />
+          <img src={ASSETS.logo} alt="Logo" className="h-14 w-10 filter invert brightness-0 invert-100" />
           <div className="text-white font-bold text-lg leading-tight uppercase">
             Alas <br /> Trail Run
           </div>
@@ -48,11 +48,14 @@ const Navbar = () => {
           <div
             className="relative"
             onMouseEnter={() => setOpenCategory(true)}
-            onMouseLeave={() => setOpenCategory(false)}
           >
-            <div className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors">
+            <button
+              type="button"
+              onClick={() => setOpenCategory(prev => !prev)}
+              className="flex items-center gap-1 cursor-pointer hover:text-[#DFFF00] transition-colors py-2 bg-transparent text-white uppercase"
+            >
               Categories <ChevronDown size={14} />
-            </div>
+            </button>
 
             {openCategory && (
               <div className="absolute right-0 mt-2 bg-black border border-gray-700 shadow-lg rounded-md w-40 py-2 z-50 animate-fadeSlide">
@@ -96,14 +99,41 @@ const Navbar = () => {
             <div className="block py-2">Race Info</div>
             <div className="block py-2">Gallery</div>
 
-            {/* Mobile Categories */}
-            <Link
-              to="/detailkategori"
-              onClick={() => setIsOpen(false)}
-              className="block py-2"
-            >
-              Categories
-            </Link>
+            {/* Mobile Categories Dropdown */}
+            <div className="flex flex-col">
+              <button
+                type="button"
+                onClick={() => setMobileCategoriesOpen(prev => !prev)}
+                className="flex items-center justify-between py-2 uppercase"
+              >
+                <span>Categories</span>
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${
+                    mobileCategoriesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileCategoriesOpen && (
+                <div className="pl-4 mt-2 flex flex-col gap-2 text-sm">
+                  {["8", "16", "32", "50"].map((km) => (
+                    <Link
+                      key={km}
+                      to={`/category/${km}`}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setMobileCategoriesOpen(false);
+                      }}
+                      className="py-1"
+                    >
+                      {km} KM
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
 
             <Link
               to="/aboutus"

@@ -35,11 +35,11 @@ const AboutSection = () => {
             {/* small thumbnail */}
             <div className="flex gap-4 mt-8">
               <div className="w-[260px] h-[160px] bg-gray-800 rounded overflow-hidden border border-gray-700 shrink-0">
-                <img src={ASSETS.lake1} className="w-full h-full object-cover" />
+                <img src={ASSETS.ASimg1} className="w-full h-full object-cover" />
               </div>
 
               <div className="w-[260px] h-[160px] bg-gray-800 rounded overflow-hidden border border-gray-700 shrink-0">
-                <img src={ASSETS.lake2} className="w-full h-full object-cover" />
+                <img src={ASSETS.ASimg2} className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -50,7 +50,7 @@ const AboutSection = () => {
              {/* Menghilangkan 'shadow-lg' dari container gambar kanan */}
              <div className="bg-gray-800 p-2 rotate-3 transform hover:rotate-0 transition rounded-xl">
                 {/* Menghilangkan 'grayscale hover:grayscale-0' pada gambar kanan */}
-                <img src={ASSETS.lake3} className="w-full h-100 object-cover transition rounded-lg" />
+                <img src={ASSETS.start} className="w-full h-100 object-cover transition rounded-lg" />
              </div>
            </div>
         </div>
@@ -58,7 +58,7 @@ const AboutSection = () => {
         {/* Bagian Bawah: Landscape Image & Text */}
         <div className="flex flex-col-reverse md:flex-row gap-8 items-center">
           <div className="w-full md:w-1/2">
-             <img src={ASSETS.lake2} alt="Landscape" className="w-full h-64 object-cover rounded-lg shadow-lg opacity-80" />
+             <img src={ASSETS.ortu} alt="Landscape" className="w-full h-64 object-cover rounded-lg shadow-lg opacity-80" />
           </div>
           <div className="w-full md:w-1/2 pl-0 md:pl-10 border-l-0 md:border-l border-gray-800">
             <p className="text-gray-300 text-sm md:text-base italic leading-loose">
